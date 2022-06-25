@@ -834,7 +834,7 @@ static MACHINE_INIT( afighter ){
 	sys16_bg_priority_mode=1;
 
 	sys16_fg_priority_mode=3;
-	sys16_fg_priority_value=0x2000;
+	sys16_fg_priority_value=0x2100;
 
 	sys16_tilebank_switch=0x2000; // fixes bg tiles
 
