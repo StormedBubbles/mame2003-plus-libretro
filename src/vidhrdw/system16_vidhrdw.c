@@ -839,6 +839,7 @@ static void get_fg_tile_info( int offset ){
 
 	case 3:
 		tile_info.priority = ((data&0xff00) >= sys16_fg_priority_value)?1:0;
+usrintf_showmessage("%i", (data&0xff00));
 		break;
 
 	default:
