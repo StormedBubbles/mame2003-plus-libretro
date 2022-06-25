@@ -833,7 +833,7 @@ static MACHINE_INIT( afighter ){
 	sys16_fgxoffset = sys16_bgxoffset = 8;
 	sys16_bg_priority_mode=1;
 	sys16_fg_priority_mode=3;
-	sys16_fg_priority_value=0x4000;
+	sys16_fg_priority_value=0x2ff0;
 
 	sys16_tilebank_switch=0x2000; // fixes bg tiles
 
