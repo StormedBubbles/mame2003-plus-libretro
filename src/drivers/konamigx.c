@@ -905,26 +905,27 @@ static WRITE32_HANDLER( adc0834_w )
 	analog_prevclk = clk;
 }
 
+int p1x, p2x, p1y, p2y;
 static READ32_HANDLER( le2_gun_H_r )
 {
-	int p1x = readinputport(9)*290/0xff+20;
-	int p2x = readinputport(11)*290/0xff+20;
+	p1x = readinputport(9)*290/0xff+20;
+	p2x = readinputport(11)*290/0xff+20;
 
 	/* make "off the left" reload too */
-	if (p1x <= 0x15) p1x = 310;
-	if (p2x <= 0x15) p2x = 310;
+	//if (p1x <= 0x15) p1x = 310;
+	//if (p2x <= 0x15) p2x = 310;
 
 	return (p1x<<16)|p2x;
 }
 
 static READ32_HANDLER( le2_gun_V_r )
 {
-	int p1y = readinputport(10)*224/0xff;
-	int p2y = readinputport(12)*224/0xff;
+	p1y = readinputport(10)*224/0xff;
+	p2y = readinputport(12)*224/0xff;
 
 	/* make "off the bottom" reload too */
-	if (p1y >= 0xdf) p1y = 0;
-	if (p2y >= 0xdf) p2y = 0;
+	//if (p1y >= 0xdf) p1y = 0;
+	//if (p2y >= 0xdf) p2y = 0;
 
 	return (p1y<<16)|p2y;
 }
