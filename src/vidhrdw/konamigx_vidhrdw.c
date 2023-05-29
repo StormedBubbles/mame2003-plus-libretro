@@ -429,6 +429,7 @@ VIDEO_START(racinfrc)
 	return 0;
 }
 
+extern p1x, p2x, p1y, p2y;
 VIDEO_UPDATE(konamigx)
 {
 	int i, newbank, newbase, dirty, unchained;
@@ -488,8 +489,8 @@ VIDEO_UPDATE(konamigx)
 
 	if( gx_invertlayersBC )
 	{
-		draw_crosshair( 1, bitmap, readinputport( 9)*287/0xff+24, readinputport(10)*223/0xff+16, cliprect );
-		draw_crosshair( 2, bitmap, readinputport(11)*287/0xff+24, readinputport(12)*223/0xff+16, cliprect );
+		draw_crosshair( 1, bitmap, p1x+2, p1y +16, cliprect );
+		draw_crosshair( 2, bitmap, p2x+2, p2y +16, cliprect );
 	}
 }
 
